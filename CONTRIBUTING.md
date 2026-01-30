@@ -58,9 +58,9 @@ We welcome feature suggestions! Please open an issue with:
 
 Each SDK has its own setup instructions in its README:
 
-- [Node.js SDK](https://github.com/rynko/sdk-node)
-- [Python SDK](https://github.com/rynko/sdk-python)
-- [Java SDK](https://github.com/rynko/sdk-java)
+- [Node.js SDK](https://github.com/rynko-dev/sdk-node)
+- [Python SDK](https://github.com/rynko-dev/sdk-python)
+- [Java SDK](https://github.com/rynko-dev/sdk-java)
 
 ### General Requirements
 

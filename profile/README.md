@@ -15,24 +15,24 @@
 
 | SDK | Package | Description |
 |-----|---------|-------------|
-| [sdk-node](https://github.com/rynko/sdk-node) | `@rynko/sdk` | Node.js/TypeScript SDK |
-| [sdk-python](https://github.com/rynko/sdk-python) | `rynko` | Python SDK with async support |
-| [sdk-java](https://github.com/rynko/sdk-java) | `io.rynko:sdk` | Java SDK for JVM applications |
+| [sdk-node](https://github.com/rynko-dev/sdk-node) | `@rynko/sdk` | Node.js/TypeScript SDK |
+| [sdk-python](https://github.com/rynko-dev/sdk-python) | `rynko` | Python SDK with async support |
+| [sdk-java](https://github.com/rynko-dev/sdk-java) | `dev.rynko:sdk` | Java SDK for JVM applications |
 
 ### Tools
 
 | Repository | Description |
 |------------|-------------|
-| [mcp-server](https://github.com/rynko/mcp-server) | Model Context Protocol server for AI assistants |
-| [developer-resources](https://github.com/rynko/developer-resources) | Sample templates, code examples, and tutorials |
+| [mcp-server](https://github.com/rynko-dev/mcp-server) | Model Context Protocol server for AI assistants |
+| [developer-resources](https://github.com/rynko-dev/developer-resources) | Sample templates, code examples, and tutorials |
 
 ### No-Code Integrations
 
 | Repository | Description |
 |------------|-------------|
-| [zapier-rynko](https://github.com/rynko/zapier-rynko) | Official Zapier integration |
-| [make-rynko](https://github.com/rynko/make-rynko) | Official Make.com (Integromat) integration |
-| [n8n-rynko](https://github.com/rynko/n8n-rynko) | Official n8n community node |
+| [zapier-rynko](https://github.com/rynko-dev/zapier-rynko) | Official Zapier integration |
+| [make-rynko](https://github.com/rynko-dev/make-rynko) | Official Make.com (Integromat) integration |
+| [n8n-rynko](https://github.com/rynko-dev/n8n-rynko) | Official n8n community node |
 
 ### Quick Links
 
@@ -60,7 +60,7 @@ const pdf = await client.documents.generatePdf({
 
 ## Contributing
 
-We welcome contributions! See our [Contributing Guide](https://github.com/rynko/.github/blob/main/CONTRIBUTING.md).
+We welcome contributions! See our [Contributing Guide](https://github.com/rynko-dev/.github/blob/main/CONTRIBUTING.md).
 
 ## License
 

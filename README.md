@@ -145,13 +145,13 @@ Then just ask: *"Create an invoice template for consulting services with VAT"*
 
 | Platform | Package | Description |
 |----------|---------|-------------|
-| **Node.js** | [`@rynko/sdk`](https://github.com/rynko/sdk-node) | Official TypeScript SDK |
-| **Python** | [`rynko`](https://github.com/rynko/sdk-python) | Official Python SDK |
-| **Java** | [`rynko-java`](https://github.com/rynko/sdk-java) | Official Java SDK |
-| **MCP Server** | [`@rynko/mcp-server`](https://github.com/rynko/mcp-server) | AI agent integration |
-| **Zapier** | [Rynko for Zapier](https://github.com/rynko/zapier-rynko) | No-code automation |
-| **Make.com** | [Rynko for Make](https://github.com/rynko/make-rynko) | Visual automation |
-| **n8n** | [n8n-nodes-rynko](https://github.com/rynko/n8n-rynko) | Workflow automation |
+| **Node.js** | [`@rynko/sdk`](https://github.com/rynko-dev/sdk-node) | Official TypeScript SDK |
+| **Python** | [`rynko`](https://github.com/rynko-dev/sdk-python) | Official Python SDK |
+| **Java** | [`dev.rynko:sdk`](https://github.com/rynko-dev/sdk-java) | Official Java SDK |
+| **MCP Server** | [`@rynko/mcp-server`](https://github.com/rynko-dev/mcp-server) | AI agent integration |
+| **Zapier** | [Rynko for Zapier](https://github.com/rynko-dev/zapier-rynko) | No-code automation |
+| **Make.com** | [Rynko for Make](https://github.com/rynko-dev/make-rynko) | Visual automation |
+| **n8n** | [n8n-nodes-rynko](https://github.com/rynko-dev/n8n-rynko) | Workflow automation |
 | **Google Sheets** | Add-on | Generate documents from spreadsheet data |
 
 ## Pricing
