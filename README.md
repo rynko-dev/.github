@@ -5,8 +5,8 @@
 <h1 align="center">Rynko</h1>
 
 <p align="center">
-  <strong>Document Infrastructure for Developers</strong><br/>
-  Generate pixel-perfect PDFs and Excel files from JSON templates in milliseconds.
+  <strong>Document Infrastructure & AI Output Validation for Developers</strong><br/>
+  Generate pixel-perfect PDFs and Excel files from templates. Validate AI outputs with schema-driven gates.
 </p>
 
 <p align="center">
@@ -20,21 +20,32 @@
   <img src="https://img.shields.io/badge/generation-200--500ms-brightgreen" alt="Generation Speed" />
   <img src="https://img.shields.io/badge/uptime-99.9%25-blue" alt="Uptime" />
   <img src="https://img.shields.io/badge/formats-PDF%20%7C%20Excel-orange" alt="Formats" />
+  <img src="https://img.shields.io/badge/Flow-AI%20Validation-purple" alt="Rynko Flow" />
 </p>
 
 ---
 
 ## Why Rynko?
 
-Traditional PDF generation is slow and fragile. HTML-to-PDF libraries require headless browsers, take 3-8 seconds per document, and produce inconsistent results.
+### Rynko Render — Document Generation
 
-**Rynko is different:**
+Traditional PDF generation is slow and fragile. HTML-to-PDF libraries require headless browsers, take 3-8 seconds per document, and produce inconsistent results.
 
 - **Sub-second generation** — 200-500ms typical (10-15x faster than HTML-to-PDF)
 - **Native rendering engine** — No browser overhead, no HTML parsing
 - **Yoga Layout** — Facebook's Flexbox engine (same as React Native) for pixel-perfect layouts
 - **Zero XSS surface** — JSON-based TextRuns instead of HTML for rich text
 - **Dual output** — PDF and Excel from the same template
+
+### Rynko Flow — AI Output Validation
+
+AI agents generate structured data, but you can't ship it without validation. Flow is a validation gateway that sits between your AI and production systems.
+
+- **Schema gates** — Define JSON Schema with business rules; every AI output is validated before delivery
+- **Human-in-the-loop approvals** — Flag runs for manual review when conditions are met
+- **Webhook deliveries** — Deliver validated outputs to downstream systems with automatic retries
+- **SDK support** — Submit runs, poll results, and manage approvals from Node.js, Python, or Java
+- **MCP integration** — AI agents can validate their own outputs via MCP tools
 
 ## Quick Start
 
@@ -128,6 +139,67 @@ Connect Claude, Cursor, or any MCP-compatible AI agent directly to Rynko:
 
 Then just ask: *"Create an invoice template for consulting services with VAT"*
 
+## Rynko Flow — Quick Start
+
+Submit AI-generated data to a gate for validation:
+
+### Node.js
+
+```typescript
+import { Rynko } from '@rynko/sdk';
+
+const client = new Rynko({ apiKey: 'YOUR_API_KEY' });
+
+// Submit a run for validation
+const run = await client.flow.submitRun('gate_abc123', {
+  input: {
+    customerName: 'Acme Corp',
+    amount: 1500.00,
+    currency: 'USD',
+  },
+});
+
+// Wait for the result
+const result = await client.flow.waitForRun(run.id);
+
+if (result.status === 'approved') {
+  console.log('Validated!', result.output);
+} else {
+  console.log('Rejected:', result.errors);
+}
+```
+
+### Python
+
+```python
+from rynko import Rynko
+
+client = Rynko(api_key="YOUR_API_KEY")
+
+run = client.flow.submit_run(
+    "gate_abc123",
+    input={"customerName": "Acme Corp", "amount": 1500.00, "currency": "USD"},
+)
+
+result = client.flow.wait_for_run(run["id"])
+print(f"Status: {result['status']}")
+```
+
+### Java
+
+```java
+FlowRun run = client.flow().submitRun("gate_abc123",
+    SubmitRunRequest.builder()
+        .inputField("customerName", "Acme Corp")
+        .inputField("amount", 1500.00)
+        .inputField("currency", "USD")
+        .build()
+);
+
+FlowRun result = client.flow().waitForRun(run.getId());
+System.out.println("Status: " + result.getStatus());
+```
+
 ## Features
 
 | Feature | Description |
@@ -140,6 +212,9 @@ Then just ask: *"Create an invoice template for consulting services with VAT"*
 | **Visual Designer** | Drag-and-drop template builder with live preview |
 | **Batch Generation** | Generate thousands of documents in parallel |
 | **Webhooks** | Real-time notifications for document events |
+| **Flow Gates** | Schema + business rule validation for AI outputs |
+| **Flow Approvals** | Human-in-the-loop review for flagged runs |
+| **Flow Deliveries** | Webhook delivery with automatic retries |
 
 ## Integrations
 
@@ -156,12 +231,22 @@ Then just ask: *"Create an invoice template for consulting services with VAT"*
 
 ## Pricing
 
-| Tier | Documents/Month | Price |
+**Flow (included in all plans):**
+
+| Tier | Flow Runs/Month | Price |
 |------|-----------------|-------|
-| **Free** | 50 | $0/month |
-| **Starter** | 500 | $19/month |
-| **Growth** | 2,500 | $49/month |
-| **Scale** | 10,000 | $99/month |
+| **Free** | 500 | $0/month |
+| **Starter** | 10,000 | $29/month |
+| **Growth** | 100,000 | $99/month |
+| **Scale** | 500,000 | $349/month |
+
+**Render Packs (add-on for document generation):**
+
+| Pack | Documents/Month | Price |
+|------|-----------------|-------|
+| **Basic** | 500 | +$19/month |
+| **Pro** | 2,000 | +$49/month |
+| **Business** | 10,000 | +$119/month |
 
 [View full pricing →](https://rynko.dev/pricing)
 
@@ -196,5 +281,5 @@ For AI assistants and code generation tools:
 ---
 
 <p align="center">
-  <sub>Built by <a href="https://rynko.dev">Rynko</a> — Document Infrastructure for Developers</sub>
+  <sub>Built by <a href="https://rynko.dev">Rynko</a> — Document Infrastructure & AI Output Validation for Developers</sub>
 </p>
